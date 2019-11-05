@@ -16,8 +16,17 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #f2ede4;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 120px;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  background-color: #f2ede4;
+  text-align: center;
 }
 
 /*
