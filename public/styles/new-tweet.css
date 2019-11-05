@@ -1,0 +1,34 @@
+form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  resize: none;
+}
+
+input[type=submit] {
+  background-color: rgb(14, 67, 159);
+  color: white;
+  font-family: 'Bungee', cursive;
+  width: 20%;
+  border-radius: 4px;
+  text-align: center;
+  float: left;
+}
+
+.new-tweet {
+  display: block;
+  text-align: center;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', cursive;
+}
