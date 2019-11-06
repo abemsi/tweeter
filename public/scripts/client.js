@@ -31,12 +31,13 @@ const data = [
 ]
 
 const renderTweets = function(tweets) {
+  $('.tweets-container').empty();
 // loops through tweets
-for (let tweet of data) {
+for (let tweet of tweets) {
   // calls createTweetElement for each tweet
   const newTweet = createTweetElement(tweet);
   // takes return value and appends it to the tweets container
-  $('.tweets-container').append(newTweet);
+  $('.tweets-container').prepend(newTweet);
 }
 }
 
@@ -61,4 +62,20 @@ let $tweet = `
 return $tweet;
 }
 
-renderTweets(data);
+  $("#new-tweet").submit(function(ev) {
+    ev.preventDefault();
+
+    const formData = $(this).serialize();
+
+    $.post('/tweets/', formData, function() {
+      console.log("done posting");
+
+      $.getJSON('/tweets/', function(updatedTweets) {
+        console.log("ll tweetssss", updatedTweets)
+        renderTweets(updatedTweets);
+      })
+    })
+  })
+
+
+// renderTweets(data);
