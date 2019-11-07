@@ -32,3 +32,12 @@ input[type=submit] {
   float: right;
   font-family: 'Bungee', cursive;
 }
+
+span.error1 {
+  color: red;
+  border: 2px solid red;
+  border-radius: 4px;
+  padding: 5px 210px 0px 210px;
+  margin-bottom: 20px;
+  display: none;
+}
