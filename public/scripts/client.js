@@ -23,7 +23,6 @@ const escape =  function(str) {
 }
 
 const createTweetElement = function(tweet) {
-  
 let $tweet = `
   <section class="tweet-container">
     <article class="tweet">
@@ -44,11 +43,15 @@ let $tweet = `
 return $tweet;
 }
 
+$(".arrow-bounce").click(function() {
+  $(".new-tweet").toggle();
+});
+
+
   $("#new-tweet").submit(function(ev) {
     ev.preventDefault();
-
+  
     const formData = $(this).serialize();
-
     $.post('/tweets/', formData, function(tweet) {
       console.log("done posting");
 
