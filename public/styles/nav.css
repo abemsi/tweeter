@@ -15,7 +15,12 @@ span.logo {
   float: left;
   font-family: 'Bungee', cursive;
   font-size: 40px;
-  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+span.write-tweet {
+  position: relative;
+  float: right;
 }
 
 div.arrow-bounce img {
@@ -37,12 +42,6 @@ div.arrow-bounce img {
   40% {
     transform: translateY(-15px);
   }
-} 
-
-span.write-tweet {
-  position: relative;
-  float: right;
-  margin-top: 10px;
 }
 
 
