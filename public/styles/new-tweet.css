@@ -25,7 +25,7 @@ input[type=submit] {
 }
 
 .new-tweet {
-  display: block;
+  display: none;
   text-align: center;
 }
 
