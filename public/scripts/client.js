@@ -6,22 +6,22 @@
 
 const renderTweets = function(tweets) {
   $('.tweets-container').empty();
-// loops through tweets
-for (let tweet of tweets) {
+  // loops through tweets
+  for (let tweet of tweets) {
   // calls createTweetElement for each tweet
-  const newTweet = createTweetElement(tweet);
-  // takes return value and appends it to the tweets container
-  $('.tweets-container').prepend(newTweet);
-}
-}
+    const newTweet = createTweetElement(tweet);
+    // takes return value and appends it to the tweets container
+    $('.tweets-container').prepend(newTweet);
+  }
+};
 
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
-function timeSince(date) {
+const timeSince = function(date) {
   // function found at https://stackoverflow.com/a/3177838
   let seconds = Math.floor((new Date() - date) / 1000);
   let interval = Math.floor(seconds / 31536000);
@@ -45,10 +45,10 @@ function timeSince(date) {
     return interval + " minutes ago";
   }
   return Math.floor(seconds) + " seconds ago";
-}
+};
 
 const createTweetElement = function(tweet) {
-let $tweet = `
+  let $tweet = `
   <section class="tweet-container">
     <article class="tweet">
       <header class="tweet-header">
@@ -68,9 +68,9 @@ let $tweet = `
       </footer>
     </article>
   </section>
-`
-return $tweet;
-}
+`;
+  return $tweet;
+};
 
 $(document).ready(function() {
 
@@ -87,13 +87,13 @@ $(document).ready(function() {
       console.log("done posting");
       
       $.getJSON('/tweets/', function(updatedTweets) {
-        console.log("all tweetssss", updatedTweets)
+        console.log("all tweetssss", updatedTweets);
         renderTweets(updatedTweets);
-      })
+      });
       $("#tweet-input").val("");
       $('span.counter').text(140);
-    })
-  })
+    });
+  });
 });
 
 

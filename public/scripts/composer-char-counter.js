@@ -3,7 +3,7 @@ $(document).ready(function() {
   
 });
 
-$('#tweet-input').keyup(function () {
+$('#tweet-input').keyup(function() {
   let count = 140;
   let length = $(this).val().length;
   if (length >= 140) {
