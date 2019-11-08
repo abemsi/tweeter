@@ -2,9 +2,14 @@ article.tweet:hover {
   box-shadow: 10px 10px #545149;
 }
 
+article.tweet:hover div.icons {
+  opacity: 1;
+}
+
 article.tweet:hover div.tweeter-handle {
   opacity: 1;
 }
+
 
 article.tweet {
   border: 2px solid black;
@@ -37,16 +42,31 @@ div.tweeter-handle {
   float: right;
   position: relative;
   opacity: 0;
+  margin-top: 15px;
+}
+
+section.tweeter {
+  border-bottom: 2px solid black;
+  margin: 30px 30px 20px 30px;
+  padding-bottom: 10px;
+  padding-top: 50px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
 }
 
 div.date-posted {
   font-size: 15px;
   float: left;
   position: relative;
+  padding-top: 10px;
 }
 
-section.tweeter {
-  border-bottom: 2px solid black;
-  margin: 30px 30px 10px 30px;
-  padding: 20px;
+div.icons {
+  float: right;
+  opacity: 0;
 }
