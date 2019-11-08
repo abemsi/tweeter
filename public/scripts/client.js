@@ -43,24 +43,29 @@ let $tweet = `
 return $tweet;
 }
 
-$(".arrow-bounce").click(function() {
-  $(".new-tweet").toggle();
-});
+$(document).ready(function() {
+
+
+  $(".arrow-bounce").click(function() {
+    $(".new-tweet").toggle();
+  });
 
 
   $("#new-tweet").submit(function(ev) {
     ev.preventDefault();
-  
+    
     const formData = $(this).serialize();
     $.post('/tweets/', formData, function(tweet) {
       console.log("done posting");
-
+      
       $.getJSON('/tweets/', function(updatedTweets) {
         console.log("all tweetssss", updatedTweets)
         renderTweets(updatedTweets);
       })
+      $("#tweet-input").val("");
     })
   })
+});
 
 
 // renderTweets(data);
