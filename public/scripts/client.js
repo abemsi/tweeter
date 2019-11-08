@@ -84,10 +84,8 @@ $(document).ready(function() {
     
     const formData = $(this).serialize();
     $.post('/tweets/', formData, function(tweet) {
-      console.log("done posting");
       
       $.getJSON('/tweets/', function(updatedTweets) {
-        console.log("all tweetssss", updatedTweets);
         renderTweets(updatedTweets);
       });
       $("#tweet-input").val("");
@@ -95,6 +93,3 @@ $(document).ready(function() {
     });
   });
 });
-
-
-// renderTweets(data);
